@@ -1,0 +1,60 @@
+<%- include('./partials/header') %> 
+    
+    <!--================Home Banner Area =================-->
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <p>Home / blog</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!--================Blog Area =================-->
+    <section class="blog_area section_padding" style="background-color: #ddd5d5;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-5 mb-lg-0">
+                    <h1 class="text-center font-weight-bolder">Blog Posts</h1>
+                    <!-- <div class="blog_left_sidebar"> -->
+                        <% blogs.forEach(element => { %>
+                            <% if (element) { %>
+                                <article class="blog_item">
+                                    <div class="blog_details">
+                                        <a class="d-inline-block">
+                                            <h2><%= element.blogName %> </h2>
+                                        </a>
+                                        <p><%= element.blogMessage %> </p>
+                                        <ul class="blog-info-link">
+                                            <li><a ><i class="far fa-user"></i> <%= element.userName %> </a></li>
+                                            <li><a ><i class="far fa-comments"></i><%= element.date %> </a></li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            <% } else{ %>
+                                <article class="blog_item">
+                                    <div class="blog_details">
+                                        <a class="d-inline-block">
+                                            <h2>No one has posted any blog yet</h2>
+                                        </a>
+                                        <p>No one has posted any blog yet</p>
+                                    </div>
+                                </article>
+                            <% }%>
+                        <% }) %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area =================-->
+
+    <%- include('./partials/footer') %> 
